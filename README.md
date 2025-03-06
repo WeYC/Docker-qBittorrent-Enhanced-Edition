@@ -139,7 +139,7 @@ WebUI\HostHeaderValidation=false
 docker create  \
     --name=qbittorrentee  \
     -e WEBUIPORT=8080  \
-    -e PUID=1026 \
+    -e PUID=1000 \
     -e PGID=100 \
     -e TZ=Asia/Shanghai \
     -e WEB_USER=admin \
@@ -161,7 +161,7 @@ services:
     image: superng6/qbittorrentee
     container_name: qbittorrentee
     environment:
-      - PUID=1026
+      - PUID=1000
       - PGID=100
       - TZ=Asia/Shanghai
       - WEB_USER=admin
