@@ -63,13 +63,13 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            superng6/qbittorrentee:${{ steps.set-version.outputs.version }}
-            superng6/qbittorrentee:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/qbittorrentee:${{ steps.set-version.outputs.version }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/qbittorrentee:latest
 
       - name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v4
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_TOKEN }}
-          repository: ${{ secrets.DOCKER_USERNAME }}/qbittorrentee
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: ${{ secrets.DOCKERHUB_USERNAME }}/qbittorrentee
           short-description: ${{ github.event.repository.description }}
